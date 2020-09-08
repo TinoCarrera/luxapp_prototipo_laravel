@@ -13,7 +13,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 
     Route::resource('/categorias', 'Admin\CategoriasController',['as'=>'admin']);
 
-    //Route::resource('/subcategorias', 'Admin\SubcategoriasController',['as'=>'admin']);
+    Route::resource('/subcategorias', 'Admin\SubcategoriasController',['as'=>'admin']);
 
     //Route::resource('/publicaciones', 'Admin\PublicacionesController',['as'=>'admin']);
     

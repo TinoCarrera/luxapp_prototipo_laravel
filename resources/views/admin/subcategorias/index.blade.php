@@ -5,20 +5,20 @@
     <div class="row justify-content-center">
         @include('admin.aside')
         <div class="col-md-8">
-            @if(count($categorias))
+            @if(count($subcategorias))
             <table class="table">
                 <thead>
                     <th>Nº</th><th>Nombre</th><th>Acciones</th>
                 </thead>
                 <tbody>
-                @foreach($categorias as $r)
+                @foreach($subcategorias as $r)
                     <tr>
                         <td>{{$r->id}}</td>
                         <td>{{$r->nombre}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{route('admin.categorias.show',$r->id)}}">Subcategorias</a>
-                            <a class="btn btn-success" href="{{route('admin.categorias.edit',$r->id)}}">Editar</a>
-                            {!! Form::open(['method'=>'DELETE','route'=>['admin.categorias.destroy',$r->id],'style'=>'display:inline']) !!}
+                            <a class="btn btn-success" href="{{route('admin.subcategorias.show',$r->id)}}">Productos</a>
+                            <a class="btn btn-success" href="{{route('admin.subcategorias.edit',$r->id)}}">Editar</a>
+                            {!! Form::open(['method'=>'DELETE','route'=>['admin.subcategorias.destroy',$r->id],'style'=>'display:inline']) !!}
                             {!! Form::submit('Eliminar',['class'=>'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
@@ -29,7 +29,7 @@
             @else
             <p>No existe ningún registro.</p>
             @endif
-            <a class="btn btn-success" href="{{route('admin.categorias.create')}}">Agregar</a>
+            <a class="btn btn-success" href="{{route('admin.subcategorias.create')}}">Agregar</a>
         </div>
     </div>
 </div>
