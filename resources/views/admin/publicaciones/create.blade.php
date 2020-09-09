@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         @include('admin.aside')
         <div class="col-md-6">
-            {!!Form::open(['route'=>['admin.categorias.store'],'method'=>'POST','files'=>true])!!}
+            {!!Form::open(['route'=>['admin.publicaciones.store'],'method'=>'POST','files'=>true])!!}
             <div class="row form-group">
                 {!!Form::label('slug','Identificador:') !!}
                 {!!Form::text('slug',null,['class'=>'form-control']) !!}
@@ -26,15 +26,14 @@
                 {!!Form::textarea('descripcion',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::file('urlfoto') !!}
+                {!!Form::label('categorias_id','Categoría:') !!}
+                {!!Form::select('categorias_id',$categorias,null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                <div class="col-sm-6">
-                    {!!Form::checkbox('portada',null) !!} Portada <br>
-                </div>
-                <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-success']) !!}
-                </div>
+                {!!Form::file('urlfoto') !!}
+            </div>
+            <div class="row justify-content-center">
+                {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
             </div>
         </div>
         {!!Form::close()!!}

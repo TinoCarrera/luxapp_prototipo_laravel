@@ -73,6 +73,10 @@ class CategoriasController extends Controller
     public function destroy($id)
     {
         $categoria = Categorias::findOrFail($id);
+
+        if(file_exists(public_path('/img/categorias/'.$categoria->urlfoto)))
+            unlink(public_path('/img/categorias/'.$categoria->urlfoto));
+        
         $categoria->delete();
         return redirect()->route('admin.categorias.index');
     }
