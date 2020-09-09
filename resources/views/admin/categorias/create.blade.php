@@ -6,23 +6,23 @@
         <div class="col-md-6">
             {!!Form::open(['route'=>['admin.categorias.store'],'method'=>'POST','files'=>true])!!}
             <div class="row form-group">
-                {!!Form::label('Slug','SLUG') !!}
+                {!!Form::label('slug','Identificador') !!}
                 {!!Form::text('slug',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::label('title','title') !!}
+                {!!Form::label('title','Título') !!}
                 {!!Form::text('title',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::label('description','description') !!}
+                {!!Form::label('description','Descripción general') !!}
                 {!!Form::text('description',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::label('nombre','nombre') !!}
+                {!!Form::label('nombre','Nombre') !!}
                 {!!Form::text('nombre',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::label('descripcion','descripcion') !!}
+                {!!Form::label('descripcion','Descripción') !!}
                 {!!Form::textarea('descripcion',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
@@ -33,7 +33,7 @@
                     {!!Form::checkbox('portada',null) !!} Portada <br>
                 </div>
                 <div class="col-sm-6">
-                    {!!Form::submit('GUARDAR',['class'=>'btn btn-success']) !!}
+                    {!!Form::submit('Guardar',['class'=>'btn btn-success']) !!}
                 </div>
             </div>
         </div>

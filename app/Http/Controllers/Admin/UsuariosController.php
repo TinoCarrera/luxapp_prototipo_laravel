@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 
 class UsuariosController extends Controller
 {
@@ -27,5 +28,11 @@ class UsuariosController extends Controller
         $user->save();
         
         return redirect()->route('admin.usuarios.index');
+    }
+
+    public function show($id)
+    {
+        Session::put('user_id',$id);
+        return redirect('/admin/pedidos');
     }
 }
