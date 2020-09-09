@@ -14,6 +14,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     Route::resource('/subcategorias', 'Admin\SubcategoriasController',['as'=>'admin']);
     Route::resource('/productos', 'Admin\ProductosController',['as'=>'admin']);
     Route::resource('/pedidos', 'Admin\PedidosController',['as'=>'admin']);
+    Route::resource('/detalles', 'Admin\DetallesController',['as'=>'admin']);
     //Route::resource('/publicaciones', 'Admin\PublicacionesController',['as'=>'admin']);
     //Route::resource('/portadas', 'Admin\PortadasController',['as'=>'admin']);
 });

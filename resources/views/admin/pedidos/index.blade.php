@@ -20,7 +20,7 @@
                         <td>
                             <a class="btn btn-success" href="{{route('admin.pedidos.show',$r->id)}}">Detalles</a>
                             @if(!$r->estado)
-                                <a class="btn btn-success" href="{{route('admin.pedidos.edit',$r->id)}}">Entregado</a>
+                                <a class="btn btn-success" href="{{route('admin.pedidos.edit',$r->id)}}">Editar</a>
                             @endif
                         </td>
                     </tr>

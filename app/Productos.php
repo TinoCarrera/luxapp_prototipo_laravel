@@ -11,6 +11,10 @@ class Productos extends Model
     ];
 
     public function subcategorias(){
-        return $this->belongTo("App\Subcategorias");
+        return $this->belongsTo("App\Subcategorias");
+    }
+
+    public function detalles(){
+        return $this->hasMany("App\Detalles");
     }
 }

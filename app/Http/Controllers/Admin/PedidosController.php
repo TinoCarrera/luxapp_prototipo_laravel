@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Pedidos;
+use Session;
 
 class PedidosController extends Controller
 {
@@ -24,14 +25,18 @@ class PedidosController extends Controller
     {
         $pedido = Pedidos::findOrFail($id);
 
-        //$pedido->fill($request->all());
-
         if($request->estado)
             $pedido->estado=1;
         else
             $pedido->estado=0;
         $pedido->save();
         return redirect()->route('admin.pedidos.index');
+    }
+
+    public function show($id)
+    {
+        Session::put('pedidos_id',$id);
+        return redirect('/admin/detalles');
     }
 
 }
