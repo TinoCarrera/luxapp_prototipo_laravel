@@ -1,89 +1,67 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>LuxApp</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Página principal</a>
-                    @else
-                        <a href="{{ route('login') }}">Ingresar</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registrarse</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    LuxApp
+@extends('layouts.app')
+@section('content')
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </a>
+</div>
+<div class="container pb-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 mt-5 mb-5">
+            <h1 class="text-center">Panaderia Lux</h1>
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow">
+            <img src="/img/subcategorias/pan_dulce.jpg" class="card-img-top">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur,
+                 adipisicing elit. Pariatur odit et quos eum voluptate. At voluptates
+                  dolore officia est sequi ratione soluta esse et ipsum! Eaque mollitia
+                   deleniti nemo nihil?</div>
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-dark rounded-pill btn-block">Producto</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="col-sm-4">
+            <div class="card shadow">
+            <img src="/img/subcategorias/pan_dulce.jpg" class="card-img-top">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur,
+                 adipisicing elit. Pariatur odit et quos eum voluptate. At voluptates
+                  dolore officia est sequi ratione soluta esse et ipsum! Eaque mollitia
+                   deleniti nemo nihil?</div>
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-dark rounded-pill btn-block">Producto</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card shadow">
+            <img src="/img/subcategorias/pan_dulce.jpg" class="card-img-top">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur,
+                 adipisicing elit. Pariatur odit et quos eum voluptate. At voluptates
+                  dolore officia est sequi ratione soluta esse et ipsum! Eaque mollitia
+                   deleniti nemo nihil?</div>
+                <div class="card-footer">
+                    <a href="/" class="btn btn-outline-dark rounded-pill btn-block">Producto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
