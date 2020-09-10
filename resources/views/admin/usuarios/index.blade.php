@@ -17,8 +17,8 @@
                         <td>{{$r->email}}</td>
                         <td>{{$r->estado}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{route('admin.usuarios.show',$r->id)}}">Pedidos</a>
-                            <a class="btn btn-success" href="{{route('admin.usuarios.edit',$r->id)}}">Editar</a>
+                            <a class="btn btn-primary" href="{{route('admin.usuarios.show',$r->id)}}">Pedidos</a>
+                            <a class="btn btn-primary" href="{{route('admin.usuarios.edit',$r->id)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach

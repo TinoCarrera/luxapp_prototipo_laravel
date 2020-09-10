@@ -54,7 +54,7 @@
                     {!!Form::checkbox('estado',null) !!} Publicado <br>
                 </div>
                 <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-success']) !!}
+                    {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
                 </div>
             </div>
         </div>

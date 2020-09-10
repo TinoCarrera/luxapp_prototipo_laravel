@@ -8,7 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
+Route::group(['prefix'=>'admin','middleware'=>'role:admin'], function(){
+
     Route::resource('/usuarios', 'Admin\UsuariosController',['as'=>'admin']);
     Route::resource('/categorias', 'Admin\CategoriasController',['as'=>'admin']);
     Route::resource('/subcategorias', 'Admin\SubcategoriasController',['as'=>'admin']);
@@ -18,6 +19,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     Route::resource('/portadas', 'Admin\PortadasController',['as'=>'admin']);
     Route::resource('/publicaciones', 'Admin\PublicacionesController',['as'=>'admin']);
     
+});
+
+Route::group(['prefix'=>'cliente','middleware'=>'role:cliente'], function(){
+    
+    Route::get('/home', 'HomeController@index')->name('home');
+   
 });
 
 

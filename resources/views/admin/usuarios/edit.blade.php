@@ -11,7 +11,7 @@
             {!!Form::checkbox('estado',null,$user->estado) !!} Activado <br>
             </div>
             <div class="col-sm-6">
-            {!!Form::submit('GUARDAR',['class'=>'btn btn-success']) !!}
+            {!!Form::submit('GUARDAR',['class'=>'btn btn-primary']) !!}
             </div>
             </div>
             {!!Form::close()!!}

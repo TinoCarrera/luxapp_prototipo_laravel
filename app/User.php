@@ -15,9 +15,20 @@ class User extends Authenticatable
     ];
 
     public function pedidos(){
-        return $this->hasMany("App\Pedidos");
+        return $this->belongsTo("App\Pedidos");
     }
     
+    public function roles(){
+        return $this->belongsToMany("App\Role");
+    }
+
+    public function hasRole($role){
+        if($this->roles()->where('name',$role)->first()){
+            return true;
+        }
+        return false;
+    }
+
     protected $hidden = [
         'password', 'remember_token',
     ];

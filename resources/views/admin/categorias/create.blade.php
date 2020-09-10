@@ -33,7 +33,7 @@
                     {!!Form::checkbox('portada',null) !!} Portada <br>
                 </div>
                 <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-success']) !!}
+                    {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@
                         <td>{{$r->id}}</td>
                         <td>{{$r->nombre}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{route('admin.productos.edit',$r->id)}}">Editar</a>
+                            <a class="btn btn-primary" href="{{route('admin.productos.edit',$r->id)}}">Editar</a>
                             {!! Form::open(['method'=>'DELETE','route'=>['admin.productos.destroy',$r->id],'style'=>'display:inline']) !!}
                             {!! Form::submit('Eliminar',['class'=>'btn btn-danger']) !!}
                             {!! Form::close() !!}
@@ -28,7 +28,7 @@
             @else
             <p>No existe ningún registro.</p>
             @endif
-            <a class="btn btn-success" href="{{route('admin.productos.create')}}">Agregar</a>
+            <a class="btn btn-primary" href="{{route('admin.productos.create')}}">Agregar</a>
         </div>
     </div>
 </div>

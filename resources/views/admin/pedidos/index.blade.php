@@ -18,9 +18,9 @@
                         <td>{{$r->created_at}}</td>
                         <td>{{$r->estado}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{route('admin.pedidos.show',$r->id)}}">Detalles</a>
+                            <a class="btn btn-primary" href="{{route('admin.pedidos.show',$r->id)}}">Detalles</a>
                             @if(!$r->estado)
-                                <a class="btn btn-success" href="{{route('admin.pedidos.edit',$r->id)}}">Editar</a>
+                                <a class="btn btn-primary" href="{{route('admin.pedidos.edit',$r->id)}}">Editar</a>
                             @endif
                         </td>
                     </tr>

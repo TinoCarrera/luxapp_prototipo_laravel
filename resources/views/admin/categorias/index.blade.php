@@ -16,8 +16,8 @@
                         <td>{{$r->id}}</td>
                         <td>{{$r->nombre}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{route('admin.categorias.show',$r->id)}}">Subcategorias</a>
-                            <a class="btn btn-success" href="{{route('admin.categorias.edit',$r->id)}}">Editar</a>
+                            <a class="btn btn-primary" href="{{route('admin.categorias.show',$r->id)}}">Subcategorias</a>
+                            <a class="btn btn-primary" href="{{route('admin.categorias.edit',$r->id)}}">Editar</a>
                             {!! Form::open(['method'=>'DELETE','route'=>['admin.categorias.destroy',$r->id],'style'=>'display:inline']) !!}
                             {!! Form::submit('Eliminar',['class'=>'btn btn-danger']) !!}
                             {!! Form::close() !!}
@@ -29,7 +29,7 @@
             @else
             <p>No existe ningún registro.</p>
             @endif
-            <a class="btn btn-success" href="{{route('admin.categorias.create')}}">Agregar</a>
+            <a class="btn btn-primary" href="{{route('admin.categorias.create')}}">Agregar</a>
         </div>
     </div>
 </div>

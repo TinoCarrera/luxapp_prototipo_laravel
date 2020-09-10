@@ -30,7 +30,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-success']) !!}
+                    {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
                 </div>
             </div>
         </div>
