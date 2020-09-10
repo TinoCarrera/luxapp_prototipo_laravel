@@ -24,18 +24,14 @@
                 <ul class="navbar-nav mr-auto">
                 </ul>
                 <ul class="navbar-nav mx-auto">
+                @forelse($menu as $r)
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Inicio</a>
+                        <a class="nav-link" href="/{{$r->slug}}">
+                            {{$r->nombre}}
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Menú</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Menú 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Menú 3</a>
-                    </li>
+                @empty
+                @endforelse
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @guest
