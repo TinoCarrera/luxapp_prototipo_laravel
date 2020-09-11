@@ -1,10 +1,9 @@
 <div class="col-sm-3">
-    <ul class="list-group">
-        <li class='list-group-item'><a href="/admin/usuarios">Usuarios</a></li>
-        <li class='list-group-item'><a href="/admin/pedidos">Pedidos</a></li>
-        <li class='list-group-item'><a href="/admin/categorias">Categorias</a></li>
-        <li class='list-group-item'><a href="/admin/publicaciones">Publicaciones</a></li>
-        <li class='list-group-item'><a href="/admin/portadas">Portadas</a></li>
-
-    </ul>
+    <div class="list-group">
+        <a href="/admin/usuarios" class="list-group-item list-group-item-action">Usuarios</a>
+        <a href="/admin/pedidos" class="list-group-item list-group-item-action">Pedidos</a>
+        <a href="/admin/categorias" class="list-group-item list-group-item-action">Categorías</a>
+        <a href="/admin/publicaciones" class="list-group-item list-group-item-action">Publicaciones</a>
+        <a href="/admin/portadas" class="list-group-item list-group-item-action">Portadas</a>
+    </div>
 </div>

@@ -26,7 +26,7 @@
                 {!!Form::textarea('descripcion',$subcategoria->descripcion,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                <img src="/img/subcategorias/{{$subcategoria->urlfoto}}">
+                <img src="/img/subcategorias/{{$subcategoria->urlfoto}}" class="img-fluid">
                 {!!Form::file('urlfoto') !!}
             </div>
             <div class="row form-group">

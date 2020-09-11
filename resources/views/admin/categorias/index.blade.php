@@ -29,7 +29,7 @@
             @else
             <p>No existe ningún registro.</p>
             @endif
-            <a class="btn btn-primary" href="{{route('admin.categorias.create')}}">Agregar</a>
+            <a class="btn btn-primary" href="{{route('admin.categorias.create')}}">Añadir nueva categoría</a>
         </div>
     </div>
 </div>

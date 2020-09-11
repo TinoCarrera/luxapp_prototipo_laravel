@@ -42,7 +42,7 @@
                 {!!Form::textarea('descripcion',$producto->descripcion,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                <img src="/img/productos/{{$producto->urlfoto}}">
+                <img src="/img/productos/{{$producto->urlfoto}}" class="img-fluid">
                 {!!Form::file('urlfoto') !!}
             </div>
             <div class="row form-group">

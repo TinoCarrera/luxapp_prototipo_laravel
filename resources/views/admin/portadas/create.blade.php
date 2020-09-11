@@ -14,7 +14,12 @@
                 {!!Form::text('link',null,['class'=>'form-control']) !!}
             </div>
             <div class="row form-group">
-                {!!Form::file('urlfoto') !!}
+                <div class="col-sm-3">
+                    {!!Form::label('urlfoto','Foto:') !!}
+                </div>
+                <div class="col-sm-3">
+                    {!!Form::file('urlfoto') !!}
+                </div>
             </div>
             <div class="row form-group">
                 {!!Form::label('orden','Orden:') !!}

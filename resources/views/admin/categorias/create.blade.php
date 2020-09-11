@@ -23,25 +23,28 @@
             </div>
             <div class="row form-group">
                 {!!Form::label('descripcion','Descripción:') !!}
-                {!!Form::textarea('descripcion',null,['class'=>'form-control']) !!}
+                {!!Form::textarea('descripcion',null,['class'=>'form-control', 'rows' => 3]) !!}
             </div>
             <div class="row form-group">
-                {!!Form::file('urlfoto') !!}
+                <div class="col-sm-2">
+                    {!!Form::label('urlfoto','Foto:') !!}
+                </div>
+                <div class="col-sm-4">
+                    {!!Form::file('urlfoto') !!}
+                </div>
             </div>
-            <div class="row form-group">
-                <div class="col-sm-6">
-                    {!!Form::checkbox('portada',null) !!} Portada <br>
+            <div class="checkbox pt-3">
+                {!!Form::checkbox('portada',null) !!}
+                {!!Form::label('portada', 'Añadir a la portada')!!}
+            </div>
+            <div class="row justify-content-center pt-4">
+                <div class="col-sm-3">
+                    {!!Form::submit('Guardar',['class'=>'btn btn-lg btn-primary pull-right']) !!}
                 </div>
-                <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
-                </div>
+            </div>
             </div>
         </div>
         {!!Form::close()!!}
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'descripcion' );
-</script>
 @endsection
