@@ -2,15 +2,12 @@
 @section('content')
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="/img/carousel/header.jpg" class="d-block w-100" alt="...">
-    </div>
+    @forelse ($portadas as $r)
+      <div class="carousel-item @if ($loop->index==0) active @endif">
+      <img src="/img/portadas/{{$r->urlfoto}}" class="d-block w-100" alt="{{$r->frase}}">
+      </div>
+    @empty
+    @endforelse
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

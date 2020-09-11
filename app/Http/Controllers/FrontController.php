@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Portadas;
 
 class FrontController extends Controller
 {
     public function index(){
-        return view('welcome');
+
+        $portadas = Portadas::all();
+        return view('welcome',compact('portadas'));
     }
 }
