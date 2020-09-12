@@ -5,6 +5,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'FrontController@index');
+Route::get('/productos/{categoria}', 'FrontController@categoria');
+Route::get('/productos/{categoria}/{subcategoria}', 'FrontController@subcategoria');
+Route::get('/{producto}', 'FrontController@producto');
+Route::get('/blog', 'FrontController@blog');
+Route::get('/blog/{publicacion}', 'FrontController@publicacion');
+Route::get('/panaderia', 'FrontController@panaderia');
+Route::get('/direccion', 'FrontController@direccion');
 
 Route::group(['prefix'=>'admin','middleware'=>'role:admin'], function(){
 

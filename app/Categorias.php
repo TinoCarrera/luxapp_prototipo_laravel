@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorias extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'slug', 'title', 'description', 'nombre', 'descripcion', 'urlfoto', 'visitas','orden','portada' 
     ];

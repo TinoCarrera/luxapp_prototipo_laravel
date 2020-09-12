@@ -26,14 +26,14 @@
         @forelse ($productos as $r)
             <div class="col-sm-3">
                 <div class="card shadow">
-                    <a href="/productos/{{$r->slug}}" title="{{$r->nombre}}">
+                    <a href="/{{$r->slug}}" title="{{$r->nombre}}">
                         <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top" alt="Comprar {{$r->nombre}}">
                     </a>
                     <div class="card-body">
                         <p class="text-center">${{$r->precio}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="/productos/{{$r->slug}}" class="btn btn-outline-dark rounded-pill btn-block">
+                        <a href="/{{$r->slug}}" class="btn btn-outline-dark rounded-pill btn-block">
                             {{$r->nombre}}
                         </a>
                     </div>
