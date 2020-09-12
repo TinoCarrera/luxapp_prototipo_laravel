@@ -3,43 +3,50 @@
 <div class="container">
     <div class="row justify-content-center">
         @include('admin.aside')
-        <div class="col-md-6">
+        <div class="col-sm-9">
             {!!Form::open(['route'=>['admin.subcategorias.update',$subcategoria],'method'=>'PUT','files'=>true])!!}
             <div class="row form-group">
-                {!!Form::label('slug','Identificador') !!}
-                {!!Form::text('slug',$subcategoria->slug,['class'=>'form-control']) !!}
-            </div>
-            <div class="row form-group">
-                {!!Form::label('title','Título') !!}
-                {!!Form::text('title',$subcategoria->title,['class'=>'form-control']) !!}
-            </div>
-            <div class="row form-group">
-                {!!Form::label('description','Descripción general') !!}
-                {!!Form::text('description',$subcategoria->description,['class'=>'form-control']) !!}
-            </div>
-            <div class="row form-group">
-                {!!Form::label('nombre','Nombre') !!}
-                {!!Form::text('nombre',$subcategoria->nombre,['class'=>'form-control']) !!}
-            </div>
-            <div class="row form-group">
-                {!!Form::label('descripcion','Descripción') !!}
-                {!!Form::textarea('descripcion',$subcategoria->descripcion,['class'=>'form-control']) !!}
-            </div>
-            <div class="row form-group">
-                <img src="/img/subcategorias/{{$subcategoria->urlfoto}}" class="img-fluid">
-                {!!Form::file('urlfoto') !!}
-            </div>
-            <div class="row form-group">
-                <div class="col-sm-6">
-                    {!!Form::submit('Guardar',['class'=>'btn btn-primary']) !!}
+                {!!Form::label('slug','Identificador',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">
+                    {!!Form::text('slug',$subcategoria->slug,['class'=>'form-control']) !!}
                 </div>
             </div>
+            <div class="row form-group">
+                {!!Form::label('title','Título',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">
+                    {!!Form::text('title',$subcategoria->title,['class'=>'form-control']) !!}
+                </div>
+            </div>
+            <div class="row form-group">
+                {!!Form::label('description','Descripción',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">
+                    {!!Form::text('description',$subcategoria->description,['class'=>'form-control']) !!}
+                </div>
+            </div>
+            <div class="row form-group">
+                {!!Form::label('nombre','Nombre',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">
+                    {!!Form::text('nombre',$subcategoria->nombre,['class'=>'form-control']) !!}
+                </div>
+            </div>
+            <div class="row form-group">
+                {!!Form::label('descripcion','Descripción detallada',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">
+                    {!!Form::textarea('descripcion',$subcategoria->descripcion,['class'=>'form-control','rows'=>3]) !!}
+                </div>
+            </div>
+            <div class="row form-group">
+                {!!Form::label('urlfoto','Foto',['class'=>'col-sm-2 col-form-label']) !!}
+                <div class="col-sm-10">    
+                    <img src="/img/subcategorias/{{$subcategoria->urlfoto}}" class="img-fluid img-thumbnail">
+                    {!!Form::file('urlfoto',['class'=>'pt-2']) !!}
+                </div>
+            </div>
+            <div class="col-sm-3 mx-auto pt-4">
+                {!!Form::submit('Guardar',['class'=>'btn btn-outline-primary btn-block']) !!}
+            </div>
+            {!!Form::close()!!}
         </div>
-        {!!Form::close()!!}
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'descripcion' );
-</script>
 @endsection

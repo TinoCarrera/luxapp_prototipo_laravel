@@ -4,11 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         @include('admin.aside')
-        <div class="col-md-8">
+        <div class="col-sm-9">
             @if(count($detalles))
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
-                    <th>Nº</th><th>Cantidad</th><th>Producto</th><th>Precio</th><th>Precio Total</th>
+                    <th>#</th>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Precio Total</th>
                 </thead>
                 <tbody>
                 @foreach($detalles as $r)
