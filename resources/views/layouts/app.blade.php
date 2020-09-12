@@ -66,7 +66,7 @@
     </nav>
     <main>
         @yield('content')
-        <div class="container-fluid text-center bg-light pt-5 pb-5">
+        <div class="container-fluid text-center bg-primary pt-5 pb-5">
             <p>&copy; Todos los derechos reservados | LuxApp | 2020</p>
         </div>
     </main>
