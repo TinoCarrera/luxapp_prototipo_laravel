@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'FrontController@index');
 Route::get('/productos/{categoria}', 'FrontController@categoria');
@@ -31,8 +33,3 @@ Route::group(['prefix'=>'cliente','middleware'=>'role:cliente'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
    
 });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

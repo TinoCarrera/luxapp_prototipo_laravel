@@ -7,6 +7,7 @@ use App\Portadas;
 use App\Productos;
 use App\Categorias;
 use App\Subcategorias;
+use App\Publicaciones;
 
 class FrontController extends Controller
 {
@@ -35,8 +36,16 @@ class FrontController extends Controller
     public function producto($producto){
 
         $producto = Productos::whereSlug($producto)->first();
-        $productos = Productos::whereSubcategorias_id($producto->subcategorias_id)->get();
-        return view('front.producto',compact('producto','productos'));
+        $producto->increment('visitas');
+        $relacionado = Productos::whereSubcategorias_id($producto->subcategorias_id)->get();
+        return view('front.producto',compact('producto','relacionado'));
+    }
+
+    public function publicacion($slug){
+
+        $publicacion = Publicaciones::whereSlug($slug)->first();
+        $publicacion->increment('visitas');
+        return view('front.publicacion',compact('publicacion'));
     }
 
 }

@@ -23,7 +23,7 @@
         <div class="col-sm-12 mt-4 text-center">
             <h2>Productos que te pueden interesar</h2>
             <div class="row justify-content-center">
-                @forelse ($productos as $r)
+                @forelse ($relacionado as $r)
                     <div class="col-sm-4 mt-3 mb-3">
                         <div class="card shadow">
                             <a href="/{{$r->slug}}" title="{{$r->nombre}}">
