@@ -32,4 +32,11 @@ class FrontController extends Controller
         return view('front.subcategoria',compact('subcategoria'));
     }
 
+    public function producto($producto){
+
+        $producto = Productos::whereSlug($producto)->first();
+        $productos = Productos::whereSubcategorias_id($producto->subcategorias_id)->get();
+        return view('front.producto',compact('producto','productos'));
+    }
+
 }
