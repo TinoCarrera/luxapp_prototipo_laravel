@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-2 mt-5 mb-5">
+        <div class="col-sm-2 mt-4">
             <div class="list-group ">
                 @forelse ($categoria->subcategorias as $r)
                         <a href="/productos/{{$categoria->slug}}/{{$r->slug}}" class="list-group-item list-group-item-action">
@@ -12,10 +12,10 @@
                 @endforelse
             </div>
         </div>
-        <div class="col-md-10">
-            <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <div class="row">
                 @forelse ($productos as $r)
-                    <div class="col-sm-4 mt-5 mb-5">
+                    <div class="col-sm-4 mt-4">
                         <div class="card shadow">
                             <a href="/{{$r->slug}}" title="{{$r->nombre}}">
                                 <img src="/img/productos/{{$r->urlfoto}}" class="card-img-top" alt="Comprar {{$r->nombre}}">
@@ -27,6 +27,18 @@
                                 <a href="/{{$r->slug}}" class="btn btn-outline-dark rounded-pill btn-block">
                                     {{$r->nombre}}
                                 </a>
+                                <form action="{{route('carrito.agregar')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$r->id}}">
+                                    <div class="form-group row justify-content-center">
+                                        <div class="col-12 mt-1">
+                                            <input type="submit" value="Agregar" class="btn btn-outline-info rounded-pill btn-block">
+                                        </div>
+                                        <div class="col-8 mt-1">
+                                            <input type="number" name="quantity" value="1" min="1" max="10" class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -35,7 +47,8 @@
                 @endforelse
             </div>
         </div>
-        <div class="col-sm-10 mt-5 mb-5">
+        @include('front.resumen')
+        <div class="col-sm-10 mt-4 mb-4">
             <h2 class="text-center">Publicaciones</h2>
             @forelse ($blog as $r)
                 <div class="card shadow mt-4" style="max-width: 1000px;">

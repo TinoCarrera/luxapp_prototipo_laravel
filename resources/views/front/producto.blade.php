@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center align-items-center mt-4 mb-4">
-        <div class="col-sm-4">
+    <div class="row mb-4">
+        <div class="col-sm-4 mt-4">
             <div class="card text-center shadow">
                 <div class="card-header">
                     <h1>{{$producto->nombre}}</h1>
@@ -14,12 +14,21 @@
                 <div class="card-footer">${{$producto->precio}}</div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <a href="" class="btn btn-outline-dark rounded-pill btn-block">Comprar</a>
+        <div class="col-sm-5 mt-4 ">
+            <form action="{{route('carrito.agregar')}}" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{$producto->id}}">
+                <div class="form-group row justify-content-center">
+                    <div class="col-12 mt-1">
+                        <input type="submit" value="Agregar" class="btn btn-outline-info rounded-pill btn-block">
+                    </div>
+                    <div class="col-8 mt-1">
+                        <input type="number" name="quantity" value="1" min="1" max="10" class="form-control">
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="col-sm-4">
-            <a href="" class="btn btn-outline-dark rounded-pill btn-block">Carrito</a>
-        </div>
+        @include('front.resumen')
         <div class="col-sm-12 mt-4 text-center">
             <h2>Productos que te pueden interesar</h2>
             <div class="row justify-content-center">
