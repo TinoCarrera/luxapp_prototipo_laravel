@@ -16,7 +16,7 @@
                     <th>Editar</th>
                 </thead>
                 <tbody>
-                @foreach($pedidos as $r)
+                @foreach($pedidos->sortByDesc('created_at') as $r)
                     <tr>
                         <td>{{$r->id}}</td>
                         <td>{{$r->codigo}}</td>

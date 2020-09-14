@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detalles extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'cantidad', 'productos_id', 'pedidos_id'
     ];

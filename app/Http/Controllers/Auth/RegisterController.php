@@ -54,6 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'telefono' => ['required', 'numeric', 'digits:11'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -69,6 +70,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'telefono' => $data['telefono'],
             'password' => Hash::make($data['password']),
         ]);
         $user->roles()->attach(Role::where('name','cliente')->first());
@@ -77,7 +79,7 @@ class RegisterController extends Controller
 
     protected function redirectTo(){
         if(Auth::user()->hasRole('cliente')){
-            return "/cliente/home";
+            return "/carrito/procesarpedido";
         }
         return "/";
     }

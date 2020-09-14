@@ -35,7 +35,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Carrito @include('front.estado')</a>
+                        <a class="nav-link" href="/carrito/checkout">Carrito @include('front.estado')</a>
                     </li>
                     @guest
                         <li class="nav-item">

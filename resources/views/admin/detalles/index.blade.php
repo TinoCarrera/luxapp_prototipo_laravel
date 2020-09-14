@@ -20,10 +20,47 @@
                         <td>{{$r->id}}</td>
                         <td>{{$r->cantidad}}</td>
                         <td>{{$r->productos->nombre}}</td>
-                        <td>{{$r->productos->precio}}</td>
-                        <td>{{$r->productos->precio*$r->cantidad}}</td>
+                        <td>${{$r->productos->precio}}</td>
+                        <td>${{number_format($r->productos->precio*$r->cantidad,2)}}</td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Subtotal:</td>
+                    <td>${{$detalles[0]->pedidos->subtotal}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Impuesto (18%):</td>
+                    <td>${{$detalles[0]->pedidos->impuesto}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th>Total:</th>
+                    <td>${{$detalles[0]->pedidos->total}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                    <th>Código del pedido</th>
+                    <th>Cliente</th>
+                    <th>Correo electrónico</th>
+                    <th>Teléfono</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{$detalles[0]->pedidos->codigo}}</td>
+                        <td>{{$detalles[0]->pedidos->user->name}}</td>
+                        <td>{{$detalles[0]->pedidos->user->email}}</td>
+                        <td>{{$detalles[0]->pedidos->user->telefono}}</td>
+                    </tr>
                 </tbody>
             </table>
             @else

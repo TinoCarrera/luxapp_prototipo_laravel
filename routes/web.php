@@ -28,6 +28,7 @@ Route::post('/carrito/agregar','CarritoController@agregar')->name('carrito.agreg
 Route::get('/carrito/checkout','CarritoController@checkout')->name('carrito.checkout');
 Route::post('/carrito/remover','CarritoController@remover')->name('carrito.remover');
 Route::post('/carrito/vaciar','CarritoController@vaciar')->name('carrito.vaciar');
+Route::get('/carrito/procesarpedido','CarritoController@procesarpedido')->name('carrito.procesarpedido');
 
 Route::group(['prefix'=>'cliente','middleware'=>'role:cliente'], function(){
     Route::get('/home', 'HomeController@index')->name('home');

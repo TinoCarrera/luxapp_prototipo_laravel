@@ -5,7 +5,7 @@
         <h1 class="text-center mt-4">Carrito de compras</h1>
         @if (Cart::getContent()->count()>0)
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <th>Cantidad/Unidad</th>
                     <th>Producto</th>
@@ -30,9 +30,25 @@
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="2"></td>
+                            <td></td>
+                            <td></td>
                             <td>Subtotal</td>
                             <td>${{number_format(Cart::getSubTotal(),2)}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Impuesto (18%)</td>
+                            <td>${{number_format(Cart::getSubTotal()*0.18,2)}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <th>Total</th>
+                            <td>${{number_format(Cart::getSubTotal()*1.18,2)}}</td>
+                            <td></td>
                         </tr>
                     </tbody>
             </table>
@@ -43,11 +59,8 @@
                 <button type="submit" class="btn btn-outline-warning rounded-pill mx-auto d-block">Vaciar carrito</button>
             </form>
         </div>
-        <div class="col-sm-6 mb-4">
-            <form action="" method="post">
-                @csrf
-                <button type="submit" class="btn btn-outline-success rounded-pill mx-auto d-block">Realizar pedido</button>
-            </form>
+        <div class="col-sm-2 mb-4">
+            <a href="/login" class="btn btn-outline-success rounded-pill mx-auto d-block">Procesar pedido</a>
         </div>
         @else
             <div class="jumbotron text-center w-100">

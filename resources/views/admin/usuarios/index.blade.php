@@ -10,8 +10,8 @@
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Correo electrónico</th>
-                    <th>Activado</th>
-                    <th>Pedidos</th>
+                    <th>Teléfono</th>
+                    <th>Activo</th>
                     <th>Editar</th>
                 </thead>
                 <tbody>
@@ -20,10 +20,8 @@
                         <td>{{$r->id}}</td>
                         <td>{{$r->name}}</td>
                         <td>{{$r->email}}</td>
+                        <td>{{$r->telefono}}</td>
                         <td>{{$r->estado}}</td>
-                        <td>
-                            <a class="btn btn-outline-primary btn-block" href="{{route('admin.usuarios.show',$r->id)}}">Pedidos</a>
-                        </td>
                         <td>
                             <a class="btn btn-outline-warning btn-block" href="{{route('admin.usuarios.edit',$r->id)}}">Editar</a>
                         </td>
