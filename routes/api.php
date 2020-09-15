@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Route::get('enviarproductos','Api\JsonController@enviarproductos');
+Route::post('recibirpedido','Api\JsonController@recibirpedido');
+
+
 Route::post('register','Api\UserController@register');
 Route::post('login','Api\UserController@login');
 Route::post('update','Api\UserController@update');

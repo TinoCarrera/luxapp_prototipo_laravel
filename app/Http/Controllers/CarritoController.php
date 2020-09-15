@@ -38,7 +38,7 @@ class CarritoController extends Controller
         return back()->with('success'," Carrito vaciado " );
     }
 
-    public function procesarpedido(Request $request){
+    public function procesarpedido(){
         if(Cart::getContent()->count()>0):
             $pedido = new Pedidos();
             $pedido->codigo = 'COD'.time();
